@@ -1,3 +1,4 @@
+import 'package:anilib/my_scroll_behavior.dart';
 import 'package:anilib/screens/home/home_screen.dart';
 import 'package:anilib/theme/ani_colors.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Shikimori',
+      title: 'Anilibria',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch().copyWith(
           primary: AniColor.primary,
@@ -21,6 +22,8 @@ class MyApp extends StatelessWidget {
         ),
       ),
       home: HomeScreen(),
+      debugShowCheckedModeBanner: false,
+      scrollBehavior: MyCustomScrollBehavior(),
     );
   }
 }

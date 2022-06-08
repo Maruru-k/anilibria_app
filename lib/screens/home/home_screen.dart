@@ -1,5 +1,6 @@
-import 'package:anilib/screens/anime/anime_screen.dart';
 import 'package:anilib/screens/anime/controller/anime_screen_controller.dart';
+import 'package:anilib/screens/anime/random_anime_screen.dart';
+import 'package:anilib/screens/anime/controller/random_anime_screen_controller.dart';
 import 'package:anilib/screens/home/controller/home_controller.dart';
 import 'package:anilib/screens/home/controller/schedule_controller.dart';
 import 'package:anilib/screens/home/schedule.dart';
@@ -10,6 +11,7 @@ import 'package:get/get.dart';
 
 class HomeScreen extends GetView<HomeScreenController> {
   HomeScreen({Key? key}) : super(key: key) {
+    Get.put(RandomAnimeScreenController());
     Get.put(AnimeScreenController());
     Get.put(ScheduleScreenController());
   }
@@ -31,7 +33,7 @@ class HomeScreen extends GetView<HomeScreenController> {
             const Expanded(child: ScheduleScreen()),
             Center(
               child: ElevatedButton(
-                onPressed: () => Get.to(() => AnimeScreen()),
+                onPressed: () => Get.to(() => RandomAnimeScreen()),
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(AniColor.white),
                 ),

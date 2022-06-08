@@ -1,3 +1,4 @@
+import 'package:anilib/screens/anime/anime_screen.dart';
 import 'package:anilib/screens/home/controller/schedule_controller.dart';
 import 'package:anilib/theme/ani_colors.dart';
 import 'package:anilib/theme/ani_text_style.dart';
@@ -50,8 +51,12 @@ class ScheduleScreen extends GetView<ScheduleScreenController> {
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
               itemCount: controller.scheduleTitle[day].title.length,
-              itemBuilder: (context, index) => TitleCard(
-                title: controller.scheduleTitle[day].title[index],
+              itemBuilder: (context, index) => InkWell(
+                onTap: () => Get.to(() => AnimeScreen(
+                    title: controller.scheduleTitle[day].title[index])),
+                child: TitleCard(
+                  title: controller.scheduleTitle[day].title[index],
+                ),
               ),
               separatorBuilder: (context, index) => const SizedBox(width: 8),
             ),
@@ -69,8 +74,8 @@ class ScheduleScreen extends GetView<ScheduleScreenController> {
       } else {
         return ListView.separated(
           itemCount: 6,
-          itemBuilder: (context,index)=>_dayCard(day: index),
-          separatorBuilder: (context,index)=>const SizedBox(height: 30),
+          itemBuilder: (context, index) => _dayCard(day: index),
+          separatorBuilder: (context, index) => const SizedBox(height: 30),
           // children: List.generate(6, (index) => _dayCard(day: index)),
         );
       }
