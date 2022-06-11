@@ -127,18 +127,23 @@ class AnimeScreen extends GetView<AnimeScreenController> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Expanded(
-                              child: Text(
-                                _title.name.ru,
-                                style: AniTextStyle.title2(AniColor.black),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    _title.name.ru,
+                                    style: AniTextStyle.title2(AniColor.black),
+                                  ),
+                                  Text(
+                                    _title.name.en,
+                                    style: AniTextStyle.standard(AniColor.grey2),
+                                  ),
+                                ],
                               ),
                             ),
                             const SizedBox(width: 20),
                             _rating(),
                           ],
-                        ),
-                        Text(
-                          _title.name.en,
-                          style: AniTextStyle.standard(AniColor.grey2),
                         ),
                         ..._description(),
                       ],
