@@ -1,4 +1,4 @@
-import 'package:anilib/screens/anime/anime_screen.dart';
+import 'package:anilib/screens/anime/view/anime_screen.dart';
 import 'package:anilib/screens/home/controller/schedule_controller.dart';
 import 'package:anilib/theme/ani_colors.dart';
 import 'package:anilib/theme/ani_text_style.dart';
@@ -37,7 +37,7 @@ class ScheduleScreen extends GetView<ScheduleScreenController> {
     }
 
     return SizedBox(
-      height: 200,
+      height: 210,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,

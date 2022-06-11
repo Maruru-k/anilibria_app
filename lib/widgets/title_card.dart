@@ -9,14 +9,11 @@ class TitleCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      // height: 200,
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(16),
-        child: Image(
-          fit: BoxFit.fitHeight,
-          image: NetworkImage(basePosterUrl + title.poster.small),
-        ),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(8),
+      child: Image(
+        fit: BoxFit.fitHeight,
+        image: NetworkImage(basePosterUrl + title.poster.small),
       ),
     );
   }

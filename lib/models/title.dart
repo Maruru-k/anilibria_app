@@ -17,6 +17,7 @@ class AniTitle {
   Team team;
   Season season;
   String description;
+  int inFavorites;
 
   AniTitle({
     required this.id,
@@ -30,6 +31,7 @@ class AniTitle {
     required this.team,
     required this.season,
     required this.description,
+    required this.inFavorites,
   });
 
   factory AniTitle.fromJson(Map<String, dynamic> json) {
@@ -45,6 +47,7 @@ class AniTitle {
       team: Team.fromJson(json["team"]),
       season: Season.fromJson(json["season"]),
       description: json["description"],
+      inFavorites: json["in_favorites"],
     );
   }
 }

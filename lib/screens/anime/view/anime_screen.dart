@@ -7,31 +7,34 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class AnimeScreen extends GetView<AnimeScreenController> {
-  final AniTitle title;
+  late final AniTitle _title;
 
-  const AnimeScreen({Key? key, required this.title}) : super(key: key);
+  AnimeScreen({Key? key, AniTitle? title}) : super(key: key) {
+    if (title == null) controller.getRandomTitle();
+    _title = title ?? controller.randomTitle;
+  }
 
   List<Widget> _description() {
     return [
       const SizedBox(height: 10),
       Text(
-        "Год: ${title.season.year}",
+        "Год: ${_title.season.year}",
         style: AniTextStyle.standard(AniColor.black),
       ),
       Text(
-        "Голоса: ${title.team.voice.join(", ")}",
+        "Голоса: ${_title.team.voice.join(", ")}",
         style: AniTextStyle.standard(AniColor.black),
       ),
       Text(
-        "Тип: ${title.type.fullString}",
+        "Тип: ${_title.type.fullString}",
         style: AniTextStyle.standard(AniColor.black),
       ),
       Text(
-        "Состояние релиза: ${title.status.string}",
+        "Состояние релиза: ${_title.status.string}",
         style: AniTextStyle.standard(AniColor.black),
       ),
       Text(
-        "Жанры: ${title.genres.join(", ")}",
+        "Жанры: ${_title.genres.join(", ")}",
         style: AniTextStyle.standard(AniColor.black),
       ),
       const Divider(
@@ -40,10 +43,34 @@ class AnimeScreen extends GetView<AnimeScreenController> {
         height: 20,
       ),
       Text(
-        title.description,
+        _title.description,
         style: AniTextStyle.medium(AniColor.black),
       ),
     ];
+  }
+
+  Widget _rating() {
+    return Container(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 10,
+        vertical: 4,
+      ),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(50),
+          border: Border.all(color: AniColor.grey2)),
+      child: Row(
+        children: [
+          Text(
+            _title.inFavorites.toString(),
+            style: AniTextStyle.standard(AniColor.grey2),
+          ),
+          const Icon(
+            Icons.star_outline,
+            color: AniColor.grey2,
+          ),
+        ],
+      ),
+    );
   }
 
   @override
@@ -56,7 +83,7 @@ class AnimeScreen extends GetView<AnimeScreenController> {
         } else {
           return NotificationListener<ScrollUpdateNotification>(
             onNotification: (event) {
-              controller.onScroll(event.metrics);
+              controller.onScroll(context, event.metrics);
               return true;
             },
             child: CustomScrollView(
@@ -65,7 +92,7 @@ class AnimeScreen extends GetView<AnimeScreenController> {
                 SliverAppBar(
                   pinned: true,
                   elevation: 0,
-                  expandedHeight: 500,
+                  expandedHeight: MediaQuery.of(context).size.height * 0.7,
                   backgroundColor: controller.isSliverAppBarExpanded.value
                       ? AniColor.background
                       : Colors.transparent,
@@ -75,7 +102,7 @@ class AnimeScreen extends GetView<AnimeScreenController> {
                           : AniColor.white),
                   title: controller.isSliverAppBarExpanded.value
                       ? Text(
-                          title.name.ru,
+                          _title.name.ru,
                           style: AniTextStyle.title(AniColor.black),
                         )
                       : null,
@@ -83,9 +110,10 @@ class AnimeScreen extends GetView<AnimeScreenController> {
                       ? null
                       : FlexibleSpaceBar(
                           background: Image(
-                            fit: BoxFit.fill,
+                            // width: 350,
+                            fit: BoxFit.cover,
                             image: NetworkImage(
-                                basePosterUrl + title.poster.original),
+                                basePosterUrl + _title.poster.original),
                           ),
                         ),
                 ),
@@ -95,13 +123,22 @@ class AnimeScreen extends GetView<AnimeScreenController> {
                   sliver: SliverList(
                     delegate: SliverChildListDelegate(
                       [
-                        Text(
-                          title.name.ru,
-                          style: AniTextStyle.title2(AniColor.black),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Expanded(
+                              child: Text(
+                                _title.name.ru,
+                                style: AniTextStyle.title2(AniColor.black),
+                              ),
+                            ),
+                            const SizedBox(width: 20),
+                            _rating(),
+                          ],
                         ),
                         Text(
-                          title.name.en,
-                          style: AniTextStyle.medium(AniColor.grey2),
+                          _title.name.en,
+                          style: AniTextStyle.standard(AniColor.grey2),
                         ),
                         ..._description(),
                       ],

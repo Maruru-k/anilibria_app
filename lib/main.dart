@@ -1,5 +1,5 @@
 import 'package:anilib/my_scroll_behavior.dart';
-import 'package:anilib/screens/home/home_screen.dart';
+import 'package:anilib/screens/home/view/home_screen.dart';
 import 'package:anilib/theme/ani_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
