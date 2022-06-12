@@ -1,12 +1,17 @@
-import 'package:anilib/models/title.dart';
-import 'package:anilib/repositories/random_title.dart';
+// Flutter imports:
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:get/get.dart';
+
+// Project imports:
+import 'package:anilib/models/submodel/title.dart';
+import 'package:anilib/repositories/random_title.dart';
 
 class AnimeScreenController extends GetxController {
   final RandomTitleRepository _randomTitleRepository;
-  ScrollController _scrollController;
+  final ScrollController _scrollController;
   late AniTitle _randomTitle;
   RxBool isLoading = true.obs;
   RxBool isSliverAppBarExpanded = false.obs;

@@ -1,6 +1,9 @@
-import 'package:anilib/canstants.dart';
-import 'package:anilib/models/title.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Project imports:
+import 'package:anilib/canstants.dart';
+import 'package:anilib/models/submodel/title.dart';
 
 class TitleCard extends StatelessWidget {
   final AniTitle title;

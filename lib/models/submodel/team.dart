@@ -5,7 +5,6 @@ class Team {
   List decor;
   List timing;
 
-
   Team({
     required this.voice,
     required this.translator,

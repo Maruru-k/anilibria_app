@@ -1,3 +1,4 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
 
 class AniColor {
@@ -9,6 +10,4 @@ class AniColor {
   static const Color grey2 = Color(0xFF898989);
   static const Color grey3 = Color(0xFF5F5F5F);
   static const Color background = Color(0xFFF4F4F4);
-
-
 }

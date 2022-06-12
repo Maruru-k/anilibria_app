@@ -1,4 +1,5 @@
-import 'package:anilib/models/title.dart';
+// Project imports:
+import 'package:anilib/models/submodel/title.dart';
 
 class ScheduleTitle {
   int day;

@@ -1,9 +1,10 @@
-import 'package:anilib/models/name.dart';
-import 'package:anilib/models/poster.dart';
-import 'package:anilib/models/season.dart';
-import 'package:anilib/models/status.dart';
-import 'package:anilib/models/team.dart';
-import 'package:anilib/models/type.dart';
+// Project imports:
+import 'package:anilib/models/submodel/name.dart';
+import 'package:anilib/models/submodel/poster.dart';
+import 'package:anilib/models/submodel/season.dart';
+import 'package:anilib/models/submodel/status.dart';
+import 'package:anilib/models/submodel/team.dart';
+import 'package:anilib/models/submodel/type.dart';
 
 class AniTitle {
   int id;

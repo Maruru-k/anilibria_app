@@ -1,10 +1,15 @@
+// Flutter imports:
+import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:get/get.dart';
+
+// Project imports:
 import 'package:anilib/canstants.dart';
-import 'package:anilib/models/title.dart';
-import 'package:anilib/screens/anime/controller/anime_screen_controller.dart';
+import 'package:anilib/models/submodel/title.dart';
+import 'package:anilib/screens/detailed_anime/controller/anime_screen_controller.dart';
 import 'package:anilib/theme/ani_colors.dart';
 import 'package:anilib/theme/ani_text_style.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class AnimeScreen extends GetView<AnimeScreenController> {
   late final AniTitle _title;
@@ -78,7 +83,7 @@ class AnimeScreen extends GetView<AnimeScreenController> {
     return Scaffold(
       backgroundColor: AniColor.background,
       body: Obx(() {
-        if (false) {
+        if (controller.isLoading.value) {
           return const Center(child: CircularProgressIndicator());
         } else {
           return NotificationListener<ScrollUpdateNotification>(
@@ -136,7 +141,8 @@ class AnimeScreen extends GetView<AnimeScreenController> {
                                   ),
                                   Text(
                                     _title.name.en,
-                                    style: AniTextStyle.standard(AniColor.grey2),
+                                    style:
+                                        AniTextStyle.standard(AniColor.grey2),
                                   ),
                                 ],
                               ),

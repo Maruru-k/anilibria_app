@@ -1,13 +1,17 @@
-import 'package:anilib/models/schedule_title.dart';
-import 'package:anilib/models/title.dart';
-import 'package:anilib/repositories/schedule_title.dart';
+// Flutter imports:
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:get/get.dart';
+
+// Project imports:
+import 'package:anilib/models/schedule_title.dart';
+import 'package:anilib/repositories/schedule_title.dart';
 
 class ScheduleScreenController extends GetxController {
   final ScheduleTitleRepository _scheduleTitleRepository;
-  ScrollController _scrollController;
+  final ScrollController _scrollController;
   List<ScheduleTitle> _scheduleTitle = [];
   RxBool isLoading = true.obs;
   RxBool isSliverAppBarExpanded = false.obs;

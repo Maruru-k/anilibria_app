@@ -1,12 +1,17 @@
-import 'package:anilib/screens/anime/controller/anime_screen_controller.dart';
-import 'package:anilib/screens/anime/view/anime_screen.dart';
+// Flutter imports:
+import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:get/get.dart';
+
+// Project imports:
+import 'package:anilib/screens/detailed_anime/controller/anime_screen_controller.dart';
+import 'package:anilib/screens/detailed_anime/view/anime_screen.dart';
 import 'package:anilib/screens/home/controller/home_controller.dart';
-import 'package:anilib/screens/home/controller/schedule_controller.dart';
-import 'package:anilib/screens/home/view/schedule.dart';
+import 'package:anilib/screens/schedule/controller/schedule_controller.dart';
+import 'package:anilib/screens/schedule/view/schedule.dart';
 import 'package:anilib/theme/ani_colors.dart';
 import 'package:anilib/theme/ani_text_style.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class HomeScreen extends GetView<HomeScreenController> {
   HomeScreen({Key? key}) : super(key: key) {

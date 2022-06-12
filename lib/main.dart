@@ -1,8 +1,13 @@
+// Flutter imports:
+import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:get/get.dart';
+
+// Project imports:
 import 'package:anilib/my_scroll_behavior.dart';
 import 'package:anilib/screens/home/view/home_screen.dart';
 import 'package:anilib/theme/ani_colors.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
