@@ -8,15 +8,12 @@ import 'package:get/get.dart';
 import 'package:anilib/screens/detailed_anime/controller/anime_screen_controller.dart';
 import 'package:anilib/screens/detailed_anime/view/anime_screen.dart';
 import 'package:anilib/screens/home/controller/home_controller.dart';
-import 'package:anilib/screens/schedule/controller/schedule_controller.dart';
-import 'package:anilib/screens/schedule/view/schedule.dart';
 import 'package:anilib/theme/ani_colors.dart';
 import 'package:anilib/theme/ani_text_style.dart';
 
 class HomeScreen extends GetView<HomeScreenController> {
   HomeScreen({Key? key}) : super(key: key) {
     Get.put(AnimeScreenController());
-    Get.put(ScheduleScreenController());
   }
 
   @override
@@ -33,7 +30,7 @@ class HomeScreen extends GetView<HomeScreenController> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Expanded(child: ScheduleScreen()),
+            // const Expanded(child: ScheduleScreen()),
             Center(
               child: ElevatedButton(
                 onPressed: () => Get.to(() => AnimeScreen()),

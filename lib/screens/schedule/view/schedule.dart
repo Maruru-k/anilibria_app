@@ -42,7 +42,7 @@ class ScheduleScreen extends GetView<ScheduleScreenController> {
     }
 
     return SizedBox(
-      height: 210,
+      height: 200,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
@@ -73,17 +73,23 @@ class ScheduleScreen extends GetView<ScheduleScreenController> {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(() {
-      if (controller.isLoading.value) {
-        return const Center(child: CircularProgressIndicator());
-      } else {
-        return ListView.separated(
-          itemCount: 6,
-          itemBuilder: (context, index) => _dayCard(day: index),
-          separatorBuilder: (context, index) => const SizedBox(height: 30),
-          // children: List.generate(6, (index) => _dayCard(day: index)),
-        );
-      }
-    });
+    return Scaffold(
+      backgroundColor: AniColor.background,
+      body: SafeArea(
+        child: Obx(() {
+          if (controller.isLoading.value) {
+            return const Center(child: CircularProgressIndicator());
+          } else {
+            return ListView.separated(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+              itemCount: 7,
+              itemBuilder: (context, index) => _dayCard(day: index),
+              separatorBuilder: (context, index) => const SizedBox(height: 30),
+              // children: List.generate(6, (index) => _dayCard(day: index)),
+            );
+          }
+        }),
+      ),
+    );
   }
 }

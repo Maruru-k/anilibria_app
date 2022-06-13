@@ -36,12 +36,4 @@ class ScheduleScreenController extends GetxController {
     _scheduleTitle = response;
     isLoading.value = false;
   }
-
-  // void onScroll(ScrollMetrics metrics) async {
-  //   if (_scrollController.offset > (450)) {
-  //     isSliverAppBarExpanded.value = true;
-  //   } else {
-  //     isSliverAppBarExpanded.value = false;
-  //   }
-  // }
 }
