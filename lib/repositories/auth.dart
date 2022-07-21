@@ -14,6 +14,11 @@ class AuthRepository {
   AuthRepository();
 
   void fetch({required String mail, required String passwd}) async {
+    print(123);
+    print(123);
+    print(123);
+    print(123);
+    print(123);
     final response = await http.post(Uri.parse(_url));
     log("${response.request!.method} "
             "${response.statusCode} " +
