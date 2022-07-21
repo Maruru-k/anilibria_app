@@ -1,4 +1,5 @@
 // Flutter imports:
+import 'package:anilib/auth/controller/auth_controller.dart';
 import 'package:flutter/material.dart';
 
 // Package imports:
@@ -12,6 +13,7 @@ import 'package:anilib/theme/ani_colors.dart';
 import 'package:anilib/theme/ani_text_style.dart';
 
 class HomeScreen extends GetView<HomeScreenController> {
+  final auth = Get.put(AuthController());
   HomeScreen({Key? key}) : super(key: key) {
     Get.put(AnimeScreenController());
   }

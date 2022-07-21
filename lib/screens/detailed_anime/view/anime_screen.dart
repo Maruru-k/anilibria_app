@@ -1,4 +1,5 @@
 // Flutter imports:
+import 'package:anilib/screens/detailed_anime/widget/rating.dart';
 import 'package:flutter/material.dart';
 
 // Package imports:
@@ -52,30 +53,6 @@ class AnimeScreen extends GetView<AnimeScreenController> {
         style: AniTextStyle.medium(AniColor.black),
       ),
     ];
-  }
-
-  Widget _rating() {
-    return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 10,
-        vertical: 4,
-      ),
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(50),
-          border: Border.all(color: AniColor.grey2)),
-      child: Row(
-        children: [
-          Text(
-            _title.inFavorites.toString(),
-            style: AniTextStyle.standard(AniColor.grey2),
-          ),
-          const Icon(
-            Icons.star_outline,
-            color: AniColor.grey2,
-          ),
-        ],
-      ),
-    );
   }
 
   @override
@@ -148,7 +125,7 @@ class AnimeScreen extends GetView<AnimeScreenController> {
                               ),
                             ),
                             const SizedBox(width: 20),
-                            _rating(),
+                            Rating(title: _title),
                           ],
                         ),
                         ..._description(),

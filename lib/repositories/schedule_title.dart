@@ -10,7 +10,7 @@ import 'package:anilib/canstants.dart';
 import 'package:anilib/models/schedule_title.dart';
 
 class ScheduleTitleRepository {
-  final String _url = baseUrl + "/v2/getSchedule";
+  final String _url = baseApiUrl + "/v2/getSchedule";
 
   ScheduleTitleRepository();
 

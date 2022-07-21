@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 
 // Project imports:
 import 'package:anilib/bindings.dart';
-import 'package:anilib/my_scroll_behavior.dart';
+import 'package:anilib/widgets/my_scroll_behavior.dart';
 import 'package:anilib/screens/distribution_screen/view/distribution_screen.dart';
 import 'package:anilib/theme/ani_colors.dart';
 
