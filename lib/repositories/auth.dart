@@ -20,6 +20,7 @@ class AuthRepository {
     print(123);
     print(123);
     final response = await http.post(Uri.parse(_url));
+    print("asd");
     log("${response.request!.method} "
             "${response.statusCode} " +
         response.request!.url.toString());

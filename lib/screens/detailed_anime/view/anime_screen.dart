@@ -1,5 +1,6 @@
 // Flutter imports:
 import 'package:anilib/screens/detailed_anime/widget/rating.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 // Package imports:
@@ -91,13 +92,11 @@ class AnimeScreen extends GetView<AnimeScreenController> {
                   flexibleSpace: controller.isSliverAppBarExpanded.value
                       ? null
                       : FlexibleSpaceBar(
-                          background: Image(
-                            // width: 350,
-                            fit: BoxFit.cover,
-                            image: NetworkImage(
-                                basePosterUrl + _title.poster.original),
+                          background: CachedNetworkImage(
+                              fit: BoxFit.cover,
+                              // width: 350,
+                              imageUrl: basePosterUrl + _title.poster.original)
                           ),
-                        ),
                 ),
                 SliverPadding(
                   padding:
