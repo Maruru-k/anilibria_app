@@ -18,7 +18,8 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.16.2 <3.0.0"
+  sdk: ^3.1.2
+  flutter: ^3.13.4
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -36,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   get: ^4.6.5
   http: ^0.13.4
+  cached_network_image: ^3.2.2
 
 dev_dependencies:
   flutter_test:
@@ -76,10 +78,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-#  fonts:
-#    - family: Helvetica Neue
-#      fonts:
-#        - asset: assets/fonts/helvetica
+  #  fonts:
+  #    - family: Helvetica Neue
+  #      fonts:
+  #        - asset: assets/fonts/helvetica
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

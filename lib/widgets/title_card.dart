@@ -1,4 +1,5 @@
 // Flutter imports:
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 // Project imports:
@@ -14,10 +15,11 @@ class TitleCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(8),
-      child: Image(
+      child: CachedNetworkImage(
         fit: BoxFit.fitHeight,
-        image: NetworkImage(basePosterUrl + title.poster.small),
+        imageUrl: (basePosterUrl + title.poster.small),
       ),
+      // NetworkImage(basePosterUrl + title.poster.small),
     );
   }
 }
